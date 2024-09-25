@@ -1,0 +1,28 @@
+import time
+import random
+
+# Traffic directions: North, South, East, West
+directions = ['North', 'South', 'East', 'West']
+
+# Function to simulate a traffic signal for a given direction
+def traffic_signal(direction, green_duration, yellow_duration, red_duration):
+    print(f"\n{direction} direction gets GREEN light for {green_duration} seconds.")
+    time.sleep(green_duration)  # Simulate green light
+    print(f"{direction} direction gets YELLOW light for {yellow_duration} seconds.")
+    time.sleep(yellow_duration)  # Simulate yellow light
+    print(f"{direction} direction gets RED light for {red_duration} seconds.")
+    time.sleep(red_duration)  # Simulate red light
+
+# Function to run the traffic signal simulation for all directions
+def run_traffic_signal(cycle_count, green_duration=5, yellow_duration=2, red_duration=5):
+    for cycle in range(cycle_count):
+        print(f"\n-- Cycle {cycle + 1} --")
+        # Simulate North-South traffic
+        traffic_signal('North-South', green_duration, yellow_duration, red_duration)
+        
+        # Simulate East-West traffic
+        traffic_signal('East-West', green_duration, yellow_duration, red_duration)
+
+# Simulation parameters
+cycle_count = 3  # Number of cycles to run the simulation
+run_traffic_signal(cycle_count)
