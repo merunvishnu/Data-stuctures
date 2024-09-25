@@ -1,0 +1,12 @@
+import random
+
+# Initialize number of toll booths and their queues
+num_toll_booths = 8  # Number of toll booths
+queues = [random.randint(1, 100) for _ in range(num_toll_booths)]  # Random lengths of queues
+
+# Print the length of each queue
+print("Queue lengths at toll booths:", queues)
+
+# Find the longest queue
+longest_queue = max(queues)
+print("Length of the longest queue:", longest_queue)
